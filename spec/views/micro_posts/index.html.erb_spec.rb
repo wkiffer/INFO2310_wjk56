@@ -4,13 +4,13 @@ describe "micro_posts/index" do
   before(:each) do
     assign(:micro_posts, [
       stub_model(MicroPost,
-        :user_id => 1,
-        :content => "Content"
-      ),
-      stub_model(MicroPost,
-        :user_id => 1,
-        :content => "Content"
-      )
+      :user_id => 1,
+      :content => "Content"
+    ),
+    stub_model(MicroPost,
+      :user_id => 1,
+      :content => "Content"
+    )
     ])
   end
 
