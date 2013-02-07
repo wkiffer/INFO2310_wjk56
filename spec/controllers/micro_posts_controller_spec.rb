@@ -110,8 +110,13 @@ describe MicroPostsController do
         # specifies that the MicroPost created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
+<<<<<<< HEAD
         MicroPost.any_instance.should_receive(:update_attributes).with({ "user_id" => "1" })
         put :update, {:id => micro_post.to_param, :micro_post => { "user_id" => "1" }}, valid_session
+=======
+        MicroPost.any_instance.should_receive(:update_attributes).with({ "user_id" => "" })
+        put :update, {:id => micro_post.to_param, :micro_post => { "user_id" => "" }}, valid_session
+>>>>>>> 7cc97afbb216f1ed79d618a5578d8f999d3025ed
       end
 
       it "assigns the requested micro_post as @micro_post" do
