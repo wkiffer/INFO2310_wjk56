@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :password
@@ -32,6 +34,11 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+  
+  def feed(paginate_options={page: 1})
+    mps = micro_posts.reverse
+	mps.paginate(paginate_options)
   end
 
 end
